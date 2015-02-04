@@ -31,7 +31,7 @@ public class App {
 			String pass = getPass();
 
 			try {
-				System.out.println("Establishing connection...");
+				System.out.println("Establishing connection... ");
 				ftpClient.connect(server, port);
 				boolean success = ftpClient.login(user, pass);
 				if (success) {
