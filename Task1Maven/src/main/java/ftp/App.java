@@ -255,16 +255,29 @@ public class App {
 	}
 
 	private static String getFTPServerName() {
-		String server = "";
+		String server = "ftp.mozilla.org";
 
 		while (true) {
-			System.out.println("Enter the FTP-Server address:");
-
+			System.out.println("Enter the FTP-Server address"
+					+ "(or press Enter to access ftp.mozilla.org):");
+			
+			String choice = "";
 			try {
-				server = getStringFromConsole();
+				choice = getStringFromConsole();
 			} catch (IOException e) {
 				continue;
 			}
+			
+			if(!choice.equals(""))
+			{
+				server = choice;
+				System.out.println(server);
+			}
+			else {
+				System.out.println(server);
+				System.out.println();
+			}
+			
 			server.trim();
 
 			return server;
@@ -272,32 +285,54 @@ public class App {
 	}
 
 	private static String getUser() {
-		String user = "";
+		String user = "anonymous";
 
 		while (true) {
-			System.out
-					.println("Enter username(try to enter 'anonymous', it slides often):");
+			System.out.println("Enter username "
+					+ "(or press Enter to set username 'anonymous'):");
 
+			String choice = "";
 			try {
-				user = getStringFromConsole();
+				choice = getStringFromConsole();
 			} catch (IOException e) {
 				continue;
 			}
 
+			if(!choice.equals(""))
+			{
+				user = choice;
+				System.out.println(user);
+			}
+			else {
+				System.out.println(user);
+				System.out.println();
+			}
+			
 			return user;
 		}
 	}
 
 	private static String getPass() {
-		String pass = "";
+		String pass = "anonymous";
 
 		while (true) {
-			System.out.println("Enter password(try '123'):");
+			System.out.println("Enter password "
+					+ "(or press Enter to set password 'anonymous'):");
 
+			String choice = "";
 			try {
-				pass = getStringFromConsole();
+				choice = getStringFromConsole();
 			} catch (IOException e) {
 				continue;
+			}
+			
+			if(!choice.equals(""))
+			{
+				pass = choice;
+			}
+			else {
+				System.out.println(pass);
+				System.out.println();
 			}
 
 			return pass;
