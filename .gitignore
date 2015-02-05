@@ -1,13 +1,14 @@
 
-1/
-ololo/
-task1jar/
-my-app/
-.metadata/
-.recommenders/
-Task01Maven-master/
+/1
+/ololo
+/task1jar
+/my-app
+/.metadata
+/.recommenders
+/Task01Maven-master
 Task1.jar
-.settings/
-target/
+/.settings
+/target
 .classpath
 .project
+/bin
