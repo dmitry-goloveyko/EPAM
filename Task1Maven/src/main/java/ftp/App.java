@@ -271,7 +271,6 @@ public class App {
 			if(!choice.equals(""))
 			{
 				server = choice;
-				System.out.println(server);
 			}
 			else {
 				System.out.println(server);
@@ -301,7 +300,6 @@ public class App {
 			if(!choice.equals(""))
 			{
 				user = choice;
-				System.out.println(user);
 			}
 			else {
 				System.out.println(user);
