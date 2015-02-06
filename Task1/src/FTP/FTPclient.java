@@ -253,16 +253,26 @@ public class FTPclient {
 	}
 
 	private static String getFTPServerName() {
-		String server = "";
+		String server = "ftp.mozilla.org";
 
 		while (true) {
-			System.out.println("Enter the FTP-Server address:");
-			//System.out.print("ftp.mozilla.org");
+			System.out.println("Enter the FTP-Server address(or press Enter to access ftp.mozilla.org):");
+			String choice = "";
 			try {
-				server = getStringFromConsole();
+				choice = getStringFromConsole();
 			} catch (IOException e) {
 				continue;
 			}
+			
+			if(choice.equals(""))
+			{
+				System.out.println(server);
+				System.out.println();
+			}
+			else {
+				server = choice;
+			}
+			
 			server.trim();
 
 			return server;
@@ -270,15 +280,24 @@ public class FTPclient {
 	}
 
 	private static String getUser() {
-		String user = "";
+		String user = "anonymous";
 
 		while (true) {
-			System.out.println("Enter username(try to enter 'anonymous', it slides often):");
-			//System.out.print("anonymous");
+			System.out.println("Enter username(or press Enter to set username 'anonymous'):");
+			String choice = "";
 			try {
-				user = getStringFromConsole();
+				choice = getStringFromConsole();
 			} catch (IOException e) {
 				continue;
+			}
+			
+			if(choice.equals(""))
+			{
+				System.out.println(user);
+				System.out.println();
+			}
+			else {
+				user = choice;
 			}
 
 			return user;
@@ -286,15 +305,24 @@ public class FTPclient {
 	}
 
 	private static String getPass() {
-		String pass = "";
+		String pass = "anonymous";
 
 		while (true) {
-			System.out.println("Enter password(try '123'):");
-			//System.out.print("123");
+			System.out.println("Enter password(or press Enter to set password 'anonymous'):");
+			String choice = "";
 			try {
-				pass = getStringFromConsole();
+				choice = getStringFromConsole();
 			} catch (IOException e) {
 				continue;
+			}
+			
+			if(choice.equals(""))
+			{
+				System.out.println(pass);
+				System.out.println();
+			}
+			else {
+				pass = choice;
 			}
 
 			return pass;

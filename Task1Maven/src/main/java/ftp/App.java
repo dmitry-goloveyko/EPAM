@@ -31,7 +31,7 @@ public class App {
 			String pass = getPass();
 
 			try {
-				System.out.println("Establishing connection... ");
+				System.out.println("Establishing connection...");
 				ftpClient.connect(server, port);
 				boolean success = ftpClient.login(user, pass);
 				if (success) {
@@ -46,9 +46,7 @@ public class App {
 					continue;
 				}
 			} catch (SocketException e) {
-				System.out.println(e.getMessage());
 			} catch (IOException e) {
-				System.out.println(e.getMessage());
 			}
 		}
 	}
@@ -258,9 +256,7 @@ public class App {
 		String server = "ftp.mozilla.org";
 
 		while (true) {
-			System.out.println("Enter the FTP-Server address"
-					+ "(or press Enter to access ftp.mozilla.org):");
-			
+			System.out.println("Enter the FTP-Server address(or press Enter to access ftp.mozilla.org):");
 			String choice = "";
 			try {
 				choice = getStringFromConsole();
@@ -268,13 +264,13 @@ public class App {
 				continue;
 			}
 			
-			if(!choice.equals(""))
+			if(choice.equals(""))
 			{
-				server = choice;
-			}
-			else {
 				System.out.println(server);
 				System.out.println();
+			}
+			else {
+				server = choice;
 			}
 			
 			server.trim();
@@ -287,25 +283,23 @@ public class App {
 		String user = "anonymous";
 
 		while (true) {
-			System.out.println("Enter username "
-					+ "(or press Enter to set username 'anonymous'):");
-
+			System.out.println("Enter username(or press Enter to set username 'anonymous'):");
 			String choice = "";
 			try {
 				choice = getStringFromConsole();
 			} catch (IOException e) {
 				continue;
 			}
-
-			if(!choice.equals(""))
+			
+			if(choice.equals(""))
 			{
-				user = choice;
-			}
-			else {
 				System.out.println(user);
 				System.out.println();
 			}
-			
+			else {
+				user = choice;
+			}
+
 			return user;
 		}
 	}
@@ -314,9 +308,7 @@ public class App {
 		String pass = "anonymous";
 
 		while (true) {
-			System.out.println("Enter password "
-					+ "(or press Enter to set password 'anonymous'):");
-
+			System.out.println("Enter password(or press Enter to set password 'anonymous'):");
 			String choice = "";
 			try {
 				choice = getStringFromConsole();
@@ -324,13 +316,13 @@ public class App {
 				continue;
 			}
 			
-			if(!choice.equals(""))
+			if(choice.equals(""))
 			{
-				pass = choice;
-			}
-			else {
 				System.out.println(pass);
 				System.out.println();
+			}
+			else {
+				pass = choice;
 			}
 
 			return pass;
