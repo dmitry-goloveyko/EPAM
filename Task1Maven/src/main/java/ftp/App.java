@@ -55,7 +55,8 @@ public class App {
 	private static void getDirectoryGuts(FTPClient ftpClient,
 			String currentDirectory) {
 		System.out.println("Current directory:  " + currentDirectory);
-		System.out.println("List of files and directories([xxxx] is a directory):");
+		System.out
+				.println("List of files and directories([xxxx] is a directory):");
 
 		// lists files and directories in the current working directory
 		FTPFile[] files = null;
@@ -137,7 +138,8 @@ public class App {
 		return text;
 	}
 
-	// gets user choice on file downloading or changing to child directory and then
+	// gets user choice on file downloading or changing to child directory and
+	// then
 	// downloads file or cd's
 	private static String respondOnUserChoice(FTPClient ftpClient,
 			String currentDirectory, String choice) {
@@ -256,23 +258,22 @@ public class App {
 		String server = "ftp.mozilla.org";
 
 		while (true) {
-			System.out.println("Enter the FTP-Server address(or press Enter to access ftp.mozilla.org):");
+			System.out
+					.println("Enter the FTP-Server address(or press Enter to access ftp.mozilla.org):");
 			String choice = "";
 			try {
 				choice = getStringFromConsole();
 			} catch (IOException e) {
 				continue;
 			}
-			
-			if(choice.equals(""))
-			{
+
+			if (choice.equals("")) {
 				System.out.println(server);
 				System.out.println();
-			}
-			else {
+			} else {
 				server = choice;
 			}
-			
+
 			server.trim();
 
 			return server;
@@ -283,20 +284,19 @@ public class App {
 		String user = "anonymous";
 
 		while (true) {
-			System.out.println("Enter username(or press Enter to set username 'anonymous'):");
+			System.out
+					.println("Enter username(or press Enter to set username 'anonymous'):");
 			String choice = "";
 			try {
 				choice = getStringFromConsole();
 			} catch (IOException e) {
 				continue;
 			}
-			
-			if(choice.equals(""))
-			{
+
+			if (choice.equals("")) {
 				System.out.println(user);
 				System.out.println();
-			}
-			else {
+			} else {
 				user = choice;
 			}
 
@@ -308,20 +308,19 @@ public class App {
 		String pass = "anonymous";
 
 		while (true) {
-			System.out.println("Enter password(or press Enter to set password 'anonymous'):");
+			System.out
+					.println("Enter password(or press Enter to set password 'anonymous'):");
 			String choice = "";
 			try {
 				choice = getStringFromConsole();
 			} catch (IOException e) {
 				continue;
 			}
-			
-			if(choice.equals(""))
-			{
+
+			if (choice.equals("")) {
 				System.out.println(pass);
 				System.out.println();
-			}
-			else {
+			} else {
 				pass = choice;
 			}
 
