@@ -14,42 +14,45 @@ import org.apache.commons.net.ftp.FTPFile;
 public class App {
 
 	public static void main(String[] args) throws IOException {
-		FTPClient ftpClient = connectToFTPServer();
+		//FTPClient ftpClient = connectToFTPServer();
 
+		Connector connector = new Connector();
+		FTPClient ftpClient = connector.connectToFTPServer();
+		
 		workWithDirectory(ftpClient);
 
-		exitFTPServer(ftpClient);
+		connector.exitFTPServer(ftpClient);
 	}
 
-	private static FTPClient connectToFTPServer() {
-		FTPClient ftpClient = new FTPClient();
-
-		while (true) {
-			String server = getFTPServerName();
-			final int port = 21;
-			String user = getUser();
-			String pass = getPass();
-
-			try {
-				System.out.println("Establishing connection...");
-				ftpClient.connect(server, port);
-				boolean success = ftpClient.login(user, pass);
-				if (success) {
-					System.out.println("Connected...");
-					System.out.println();
-
-					return ftpClient;
-				} else {
-					System.out.println("Connection error...");
-					System.out.println("Please check connection data...");
-					System.out.println();
-					continue;
-				}
-			} catch (SocketException e) {
-			} catch (IOException e) {
-			}
-		}
-	}
+//	private static FTPClient connectToFTPServer() {
+//		FTPClient ftpClient = new FTPClient();
+//
+//		while (true) {
+//			String server = getFTPServerName();
+//			final int port = 21;
+//			String user = getUser();
+//			String pass = getPass();
+//
+//			try {
+//				System.out.println("Establishing connection...");
+//				ftpClient.connect(server, port);
+//				boolean success = ftpClient.login(user, pass);
+//				if (success) {
+//					System.out.println("Connected...");
+//					System.out.println();
+//
+//					return ftpClient;
+//				} else {
+//					System.out.println("Connection error...");
+//					System.out.println("Please check connection data...");
+//					System.out.println();
+//					continue;
+//				}
+//			} catch (SocketException e) {
+//			} catch (IOException e) {
+//			}
+//		}
+//	}
 
 	// gets files and directories in directory
 	private static void getDirectoryGuts(FTPClient ftpClient,
