@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<notebook>
+    <note type="Note">
+        <text>aaa</text>
+        <date>2015-06-23T00:00:00.000-03:00</date>
+    </note>
+    <note type="AlertNote">
+        <text>bbb</text>
+        <date>2015-06-23T00:00:00.000-03:00</date>
+        <alertDate>2015-06-23T00:00:00.000-03:00</alertDate>
+    </note>
+    <note type="ColorNote">
+        <text>ccc</text>
+        <date>2015-06-23T00:00:00.000-03:00</date>
+        <color>red</color>
+    </note>
+</notebook>
